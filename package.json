@@ -19,6 +19,10 @@
     "@angular/platform-browser": "~11.0.4",
     "@angular/platform-browser-dynamic": "~11.0.4",
     "@angular/router": "~11.0.4",
+<<<<<<< HEAD
+=======
+    "@fortawesome/angular-fontawesome": "^0.8.2",
+>>>>>>> 95b738a (ultimo hasta dom)
     "@fortawesome/fontawesome-free": "^5.15.2",
     "@ng-bootstrap/ng-bootstrap": "^9.0.2",
     "@popperjs/core": "^2.7.0",
