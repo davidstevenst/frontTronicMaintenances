@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpleadosServiceService } from 'src/app/services/empleados-service.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  constructor( private empleadosService:EmpleadosServiceService) { }
 
   ngOnInit(): void {
+  }
+
+
+  isAuth():boolean{
+     if(localStorage.getItem('user')){
+       return true;
+     } else {
+       return false;
+     }
+  }
+
+  logOut(){
+    this.empleadosService.logOut();
   }
 
 }
