@@ -1,0 +1,33 @@
+<div class="card text-center animated fadeIn">
+    <div class="card-header">
+      Nuevo Cliente
+    </div>
+    <div class="card-body">
+      <div class="text-left">
+        <a href="" [routerLink]="['/MenuClientes']" routerLinkActive="router-link-active" ><button type="button" class="btn btn-secondary">
+          <i class ="fa fa-arrow-circle-left"></i>
+        </button>
+      </a>
+      
+    </div>
+      <form >
+      <h5>Correo Electronico</h5>
+      <input type="email" class="form-control" id="correo" name="correo" [(ngModel)]="cliente.correo">
+
+
+      <h5 class="mt-2">Nombre del cliente</h5>
+      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="cliente.nombre">
+
+      <div *ngIf="mensajes " class='animated fadeIn-fast m-2'>
+        <div class="alert alert-danger" role="alert" *ngFor="let mensaje of mensajes">
+          {{mensajes}}
+        </div>
+      </div>
+
+      <button class="btn btn-primary m-3" (click)="save()" >Registrar nuevo cliente</button>
+      </form>
+    </div>
+    <div class="card-footer text-muted">
+      No compartiremos tus datos con nadie mas
+    </div>
+  </div>

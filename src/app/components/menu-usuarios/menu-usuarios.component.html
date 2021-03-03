@@ -1,0 +1,42 @@
+<div class="card text-center animated fadeIn">
+    <div class="card-header">
+      Menu de gestión de usuarios
+    </div>
+    <div class="card-body">
+      <div class="text-left">
+        <a href="" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active" ><button type="button" class="btn btn-secondary">
+          <i class ="fa fa-arrow-circle-left"></i>
+        </button>
+      </a>
+      </div>
+        <div class="row m-1">
+
+            <div class="card text-white bg-secondary mb-3 m-2"  style="width: 21rem;">
+                <div class="card-header"><i class="fa fa-user"> </i><i class="fa fa-plus ml-2"></i>  </div>
+                <div class="card-body">
+                  <h5 class="card-title">Nuevo empleado</h5>
+                  <a href="" [routerLink]="['/NewEmpleado']" routerLinkActive="router-link-active"   routerLinkActive="router-link-active" ><button class="btn btn-light" ><i class ="fa fa-arrow-circle-right"></i></button></a>
+                </div>
+            </div>
+
+            <div class="card text-white bg-secondary mb-3 m-2"  style="width: 21rem;">
+              <div class="card-header"><i class="fa fa-user"></i></div>
+              <div class="card-body">
+                <h5 class="card-title">Gerentes / Administradores</h5>
+                <a href=""  routerLinkActive="router-link-active" ><button class="btn btn-light" ><i class ="fa fa-arrow-circle-right"></i></button></a>
+              </div>
+          </div>
+
+            
+
+             
+              
+
+
+        </div>
+
+    </div>
+    <div class="card-footer text-muted">
+      Recuerda que tus datos no seran compartidos con alguien mas
+    </div>
+  </div>

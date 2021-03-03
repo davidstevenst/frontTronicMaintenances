@@ -3,10 +3,22 @@
       Registrar una entrada
     </div>
     <div class="card-body">
-      <h5 class="card-title">Escanea el codigo de barras del disposito</h5>
-      <input type="text" class="form-control" name="codebar" id="codebar" placeholder="Codigo de barras">
+      <div class="text-left">
+        <a href="" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active" ><button type="button" class="btn btn-secondary">
+          <i class ="fa fa-arrow-circle-left"></i>
+        </button>
+      </a>
+      </div>
+      <h5 class="card-title">Escanea el codigo qr del disposito</h5>
+      <input type="text" class="form-control" name="codebar" id="codebar" [(ngModel)]="qrCode" placeholder="Valor del qr">
 
-      <button class="btn btn-primary m-2" >Registrar entrada</button>
+      <div class="alert alert-danger animated fadeIn fast m-2" role="alert" *ngIf="mensajes.length>0">
+
+        <p *ngFor="let mensaje of mensajes">{{mensaje}}</p>
+      
+      </div>
+
+      <button class="btn btn-primary m-2" (click)="registrarEntrada()" >Registrar entrada</button>
     </div>
     <div class="card-footer text-muted">
       No compartiremos tus datos con nadie mas
