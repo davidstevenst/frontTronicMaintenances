@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Empleados } from '../domain/empleados';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,14 @@ export class EmpleadosServiceService {
     
     this.router.navigate(['/Login']);
 
+<<<<<<< HEAD
+=======
+  }
+
+  save(empleado:Empleados):Observable<any>{
+    let headers=this.createTokenHeader();
+    return this.httpClient.post(this.url,empleado ,{headers:headers})
+>>>>>>> ramaMac
   }
 
 }

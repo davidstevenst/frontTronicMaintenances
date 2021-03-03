@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import  {NgxPaginationModule } from 'ngx-pagination';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -10,6 +11,19 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { EntradaComponent } from './components/entrada/entrada.component';
+<<<<<<< HEAD
+=======
+import { QrcodeComponent } from './components/qrcode/qrcode.component';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { NewDispositivoComponent } from './components/new-dispositivo/new-dispositivo.component';
+import { NewClienteComponent } from './components/new-cliente/new-cliente.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MenuUsuariosComponent } from './components/menu-usuarios/menu-usuarios.component';
+import { MenuClientesComponent } from './components/menu-clientes/menu-clientes.component';
+import { NewEmpleadoComponent } from './components/new-empleado/new-empleado.component';
+import { DiagnosticoServicesComponent } from './components/diagnostico-services/diagnostico-services.component';
+import { FilterPipe } from './pipes/filter.pipe'
+>>>>>>> ramaMac
 
 @NgModule({
   declarations: [
@@ -19,13 +33,34 @@ import { EntradaComponent } from './components/entrada/entrada.component';
     AcercaDeComponent,
     FooterComponent,
     MainMenuComponent,
+<<<<<<< HEAD
     EntradaComponent
+=======
+    EntradaComponent,
+    QrcodeComponent,
+    NewDispositivoComponent,
+    NewClienteComponent,
+    MenuUsuariosComponent,
+    MenuClientesComponent,
+    NewEmpleadoComponent,
+    DiagnosticoServicesComponent,
+    FilterPipe
+>>>>>>> ramaMac
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+<<<<<<< HEAD
     FormsModule
+=======
+    FormsModule,
+    NgxQRCodeModule,
+    FontAwesomeModule,
+    NgxPaginationModule
+    
+    
+>>>>>>> ramaMac
   ],
   providers: [],
   bootstrap: [AppComponent]

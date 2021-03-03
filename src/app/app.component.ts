@@ -16,9 +16,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.user = new User("admin","password");
-    this.getTokenService.loginUser(this.user).subscribe(data => {
-      localStorage.setItem("token", data.token);
-    })
+    this.getTokenService.loginUser(this.user).subscribe(data => localStorage.setItem("token", data.token))
   }
 
   

@@ -1,0 +1,23 @@
+<div class="card text-center animated fadeIn">
+    <div class="card-header">
+      Generar nuevo qr
+    </div>
+    <div class="card-body">
+      <div class="text-left">
+        <a href="" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active" ><button type="button" class="btn btn-secondary">
+          <i class ="fa fa-arrow-circle-left"></i>
+        </button>
+      </a>
+      </div>
+      <h5 class="card-title">Se genera el codigo qr</h5>
+      <ngx-qrcode 
+        [elementType]="elementType" 
+        [value] = "value"
+        cssClass = "aclass"
+        errorCorrectionLevel = "errorCorrectionLevel">
+      </ngx-qrcode>
+    </div>
+    <div class="card-footer text-muted">
+      No compartiremos tus datos con nadie mas
+    </div>
+  </div>
