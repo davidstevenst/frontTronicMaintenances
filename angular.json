@@ -24,31 +24,20 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-<<<<<<< HEAD
-              "node_modules/@fortawesome/fontawesome-free/css/all.css",
-              "src/styles.css",
-              
-=======
               "src/styles.css",
               "node_modules/font-awesome/css/font-awesome.css"
            
            
             
->>>>>>> ramaMac
               
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
-<<<<<<< HEAD
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/@fortawesome/fontawesome-free/js/all.js"
-=======
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
               
               
 
->>>>>>> ramaMac
             ]
           },
           "configurations": {

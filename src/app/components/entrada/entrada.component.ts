@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-import { Component, OnInit } from '@angular/core';
-
-=======
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Mantenimientos } from 'src/app/domain/mantenimientos';
 import { MantenimientosService } from 'src/app/services/mantenimientos.service';
 import Swal from 'sweetalert2';
->>>>>>> ramaMac
 @Component({
   selector: 'app-entrada',
   templateUrl: './entrada.component.html',
@@ -15,13 +10,6 @@ import Swal from 'sweetalert2';
 })
 export class EntradaComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-=======
   public mensajes:string[]=[];
   public qrCode:string="";
   public mantenimiento:Mantenimientos= new Mantenimientos("","P",null, new Date(),null
@@ -59,5 +47,4 @@ export class EntradaComponent implements OnInit {
 
 
 
->>>>>>> ramaMac
 }

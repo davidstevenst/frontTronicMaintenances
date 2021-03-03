@@ -11,8 +11,6 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { EntradaComponent } from './components/entrada/entrada.component';
-<<<<<<< HEAD
-=======
 import { QrcodeComponent } from './components/qrcode/qrcode.component';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { NewDispositivoComponent } from './components/new-dispositivo/new-dispositivo.component';
@@ -23,7 +21,6 @@ import { MenuClientesComponent } from './components/menu-clientes/menu-clientes.
 import { NewEmpleadoComponent } from './components/new-empleado/new-empleado.component';
 import { DiagnosticoServicesComponent } from './components/diagnostico-services/diagnostico-services.component';
 import { FilterPipe } from './pipes/filter.pipe'
->>>>>>> ramaMac
 
 @NgModule({
   declarations: [
@@ -33,9 +30,6 @@ import { FilterPipe } from './pipes/filter.pipe'
     AcercaDeComponent,
     FooterComponent,
     MainMenuComponent,
-<<<<<<< HEAD
-    EntradaComponent
-=======
     EntradaComponent,
     QrcodeComponent,
     NewDispositivoComponent,
@@ -45,22 +39,17 @@ import { FilterPipe } from './pipes/filter.pipe'
     NewEmpleadoComponent,
     DiagnosticoServicesComponent,
     FilterPipe
->>>>>>> ramaMac
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-<<<<<<< HEAD
-    FormsModule
-=======
     FormsModule,
     NgxQRCodeModule,
     FontAwesomeModule,
     NgxPaginationModule
     
     
->>>>>>> ramaMac
   ],
   providers: [],
   bootstrap: [AppComponent]

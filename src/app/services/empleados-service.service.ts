@@ -35,14 +35,11 @@ export class EmpleadosServiceService {
     
     this.router.navigate(['/Login']);
 
-<<<<<<< HEAD
-=======
   }
 
   save(empleado:Empleados):Observable<any>{
     let headers=this.createTokenHeader();
     return this.httpClient.post(this.url,empleado ,{headers:headers})
->>>>>>> ramaMac
   }
 
 }
