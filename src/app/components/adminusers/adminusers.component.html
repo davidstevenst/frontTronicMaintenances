@@ -1,0 +1,94 @@
+<div class="card text-center animated fadeIn">
+    <div class="card-header">
+      Administrar usuarios
+    </div>
+    <div class="card-body">
+      <div class="text-left">
+        <a href="" [routerLink]="['/MenuUsers']" routerLinkActive="router-link-active" ><button type="button" class="btn btn-secondary">
+          <i class ="fa fa-arrow-circle-left"></i>
+        </button>
+      </a>
+      
+    </div>
+
+    <h3>Editar/desactivar empleados</h3>
+        
+        <table class="table table-responsive-lg table-striped table-hover mt-5">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">apellido</th>
+                <th scope="col">email</th>
+                <th scope="col">estado</th>
+                <th scope="col">nombre</th>
+                <th scope="col">Desactivar</th>
+                <th scope="col">Editar</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let empleado of empleados">
+                
+                <td>{{empleado.apellido}}</td>
+                <td>{{empleado.email}}</td>
+                <td>{{empleado.estado}}</td>
+                <td>{{empleado.nombre}}</td>
+                <td>
+                    <button class="btn btn-danger"><span class="fa fa-trash" (click)="desactivarEmpleado(empleado)"></span></button>
+                </td>
+                <td>
+                   <a href="" [routerLink]="['/EditUsers',empleado.email]" routerLinkActive="router-link-active" > 
+                       <button class="btn btn-success"><span class="fa fa-pencil"></span></button>
+                    </a>
+                </td>
+
+              </tr>
+            
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h3>Activar empleados deshabilitados</h3>
+
+        <table class="table table-responsive-lg table-striped table-hover mt-5">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">apellido</th>
+              <th scope="col">email</th>
+              <th scope="col">estado</th>
+              <th scope="col">nombre</th>
+              <th scope="col">Activar</th>
+              <th scope="col">Editar</th>
+         
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let empleado of empleadosDesactivados">
+              
+              <td>{{empleado.apellido}}</td>
+              <td>{{empleado.email}}</td>
+              <td>{{empleado.estado}}</td>
+              <td>{{empleado.nombre}}</td>
+              <td>
+                  <button class="btn btn-primary"><span class="fa fa-plus" (click)="activarEmpleado(empleado)"></span></button>
+              </td>
+              <td>
+                 <a href="" [routerLink]="['/EditUsers',empleado.email]" routerLinkActive="router-link-active" > 
+                     <button class="btn btn-success"><span class="fa fa-pencil"></span></button>
+                  </a>
+              </td>
+
+            </tr>
+          
+          </tbody>
+      </table>
+
+      
+
+
+    </div>
+    <div class="card-footer text-muted">
+      No compartiremos tus datos con nadie mas
+    </div>
+  </div>

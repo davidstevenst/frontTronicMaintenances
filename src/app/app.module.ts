@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {AngularFireModule} from '@angular/fire';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,7 +21,10 @@ import { MenuUsuariosComponent } from './components/menu-usuarios/menu-usuarios.
 import { MenuClientesComponent } from './components/menu-clientes/menu-clientes.component';
 import { NewEmpleadoComponent } from './components/new-empleado/new-empleado.component';
 import { DiagnosticoServicesComponent } from './components/diagnostico-services/diagnostico-services.component';
-import { FilterPipe } from './pipes/filter.pipe'
+import { FilterPipe } from './pipes/filter.pipe';
+import { AdminusersComponent } from './components/adminusers/adminusers.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component'
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -38,12 +42,15 @@ import { FilterPipe } from './pipes/filter.pipe'
     MenuClientesComponent,
     NewEmpleadoComponent,
     DiagnosticoServicesComponent,
-    FilterPipe
+    FilterPipe,
+    AdminusersComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     NgxQRCodeModule,
     FontAwesomeModule,

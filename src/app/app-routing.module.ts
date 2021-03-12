@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
+import { AdminusersComponent } from './components/adminusers/adminusers.component';
 import { DiagnosticoServicesComponent } from './components/diagnostico-services/diagnostico-services.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { EntradaComponent } from './components/entrada/entrada.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
@@ -25,6 +27,8 @@ const routes: Routes = [
   { path: 'MenuClientes', component:MenuClientesComponent, canActivate:[AuthGuard]},
   { path: 'NewEmpleado', component:NewEmpleadoComponent, canActivate:[AuthGuard]},
   { path: 'DiagnosticServices', component:DiagnosticoServicesComponent, canActivate:[AuthGuard]},
+  { path: 'AdminUsuarios',component:AdminusersComponent, canActivate:[AuthGuard]},
+  { path: 'EditUsers/:email',component:EditUserComponent, canActivate:[AuthGuard]},
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
   { path: '**', redirectTo: '/Login', pathMatch: 'full' }
 

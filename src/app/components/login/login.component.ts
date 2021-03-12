@@ -35,6 +35,8 @@ export class LoginComponent implements OnInit {
       
     this.empleadosService.findByEmailAndPassword(this.correo,this.password).subscribe(data => {
       
+ 
+
       localStorage.setItem("user", data.email);
 
       this.router.navigate(['/MainMenu']);

@@ -135,6 +135,7 @@ export class DiagnosticoServicesComponent implements OnInit {
         'El servicio se ha registrado!',
         'success'
       )
+      this.findServicios();
     }, err=>{
       this.mensajes.push(err.error.error)
     })

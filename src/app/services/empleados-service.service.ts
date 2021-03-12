@@ -28,6 +28,22 @@ export class EmpleadosServiceService {
     return this.httpClient.get(this.url+"/signIn/"+email+"/"+password ,{headers:headers})
   }
 
+  findById(email:string):Observable<any>{
+   
+    let headers=this.createTokenHeader();
+    return this.httpClient.get(this.url+"/"+email ,{headers:headers})
+  }
+
+  findAll():Observable<any>{
+    let headers= this.createTokenHeader();
+    return this.httpClient.get(this.url, {headers:headers})
+  }
+
+  update(empleados:Empleados):Observable<any>{
+    let headers= this.createTokenHeader();
+    return this.httpClient.put(this.url,empleados, {headers:headers})
+  }
+
 
   logOut(){
     
