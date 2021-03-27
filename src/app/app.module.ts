@@ -25,6 +25,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { AdminusersComponent } from './components/adminusers/adminusers.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component'
 import { environment } from 'src/environments/environment';
+import { NewGerenteComponent } from './components/new-gerente/new-gerente.component';
+import { SalidaComponent } from './components/salida/salida.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { environment } from 'src/environments/environment';
     DiagnosticoServicesComponent,
     FilterPipe,
     AdminusersComponent,
-    EditUserComponent
+    EditUserComponent,
+    NewGerenteComponent,
+    SalidaComponent
   ],
   imports: [
     BrowserModule,

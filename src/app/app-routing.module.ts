@@ -12,7 +12,9 @@ import { MenuUsuariosComponent } from './components/menu-usuarios/menu-usuarios.
 import { NewClienteComponent } from './components/new-cliente/new-cliente.component';
 import { NewDispositivoComponent } from './components/new-dispositivo/new-dispositivo.component';
 import { NewEmpleadoComponent } from './components/new-empleado/new-empleado.component';
+import { NewGerenteComponent } from './components/new-gerente/new-gerente.component';
 import { QrcodeComponent } from './components/qrcode/qrcode.component';
+import { SalidaComponent } from './components/salida/salida.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
@@ -27,8 +29,10 @@ const routes: Routes = [
   { path: 'MenuClientes', component:MenuClientesComponent, canActivate:[AuthGuard]},
   { path: 'NewEmpleado', component:NewEmpleadoComponent, canActivate:[AuthGuard]},
   { path: 'DiagnosticServices', component:DiagnosticoServicesComponent, canActivate:[AuthGuard]},
+  { path: 'NewGerente', component:NewGerenteComponent, canActivate:[AuthGuard]},
   { path: 'AdminUsuarios',component:AdminusersComponent, canActivate:[AuthGuard]},
   { path: 'EditUsers/:email',component:EditUserComponent, canActivate:[AuthGuard]},
+  { path: 'Salida',component:SalidaComponent, canActivate:[AuthGuard]},
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
   { path: '**', redirectTo: '/Login', pathMatch: 'full' }
 

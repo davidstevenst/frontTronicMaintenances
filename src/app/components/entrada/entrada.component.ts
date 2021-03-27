@@ -19,7 +19,7 @@ export class EntradaComponent implements OnInit {
   constructor( private mantenimientosService:MantenimientosService) { }
 
   ngOnInit(): void {
-    
+
   }
 
 

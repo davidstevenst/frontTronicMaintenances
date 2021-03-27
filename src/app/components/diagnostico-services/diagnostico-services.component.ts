@@ -109,6 +109,7 @@ export class DiagnosticoServicesComponent implements OnInit {
   findAllTiposServicios(){
 
     this.tiposServiciosService.findAll().subscribe(data =>{
+      
       this.tiposServicios = data;
     }, err =>{
       console.log(err)
@@ -149,6 +150,7 @@ export class DiagnosticoServicesComponent implements OnInit {
       this.serviciosEnMantenimientos=data;
       
      
+      console.log(data)
 
     }, err =>{
       console.log(err)

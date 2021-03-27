@@ -1,42 +1,42 @@
 <div class="card text-center animated fadeIn">
     <div class="card-header">
-      Nuevo Cliente
+        Nuevo empleado
     </div>
     <div class="card-body">
-      <div class="text-left">
-        <a href="" [routerLink]="['/MenuClientes']" routerLinkActive="router-link-active" ><button type="button" class="btn btn-secondary">
+        <div class="text-left">
+            <a href="" [routerLink]="['/MenuUsers']" routerLinkActive="router-link-active"><button type="button" class="btn btn-secondary">
           <i class ="fa fa-arrow-circle-left"></i>
         </button>
       </a>
-      
-    </div>
-      <form >
-      <h5>Correo Electronico</h5>
-      <input type="email" class="form-control" id="email" name="email" #email [(ngModel)]="empleado.email" >
 
-
-      <h5 class="mt-2">Nombre(s) del empleado</h5>
-      <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="empleado.nombre" >
-
-      <h5 class="mt-2">Apellidos del empleado</h5>
-      <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="empleado.apellido" >
-
-      <h5 class="mt-2">Contraseña</h5>
-      <input type="password" class="form-control" id="contrasena" name="contrasena" [(ngModel)]="empleado.contrasena" >
-
-      <h5 class="mt-2">Repetir Contraseña</h5>
-      <input type="password" class="form-control" id="repcontrasena" name="repcontrasena" [(ngModel)]="repcontrasena" >
-
-      <div class="m-3">
-        <div class="alert alert-danger" role="alert" *ngIf="mensajes.length>0">
-          <p *ngFor="let mensaje of mensajes">{{mensaje}}</p>
         </div>
-      </div>
+        <form>
+            <h5>Correo Electronico</h5>
+            <input type="email" class="form-control" id="email" name="email" #email [(ngModel)]="empleado.email">
 
-      <button class="btn btn-primary m-3" (click)="crearEmpleado()" >Registrar nuevo empleado</button>
-      </form>
+
+            <h5 class="mt-2">Nombre(s) del empleado</h5>
+            <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="empleado.nombre">
+
+            <h5 class="mt-2">Apellidos del empleado</h5>
+            <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="empleado.apellido">
+
+            <h5 class="mt-2">Contraseña</h5>
+            <input type="password" class="form-control" id="contrasena" name="contrasena" [(ngModel)]="empleado.contrasena">
+
+            <h5 class="mt-2">Repetir Contraseña</h5>
+            <input type="password" class="form-control" id="repcontrasena" name="repcontrasena" [(ngModel)]="repcontrasena">
+
+            <div class="m-3">
+                <div class="alert alert-danger" role="alert" *ngIf="mensajes.length>0">
+                    <p *ngFor="let mensaje of mensajes">{{mensaje}}</p>
+                </div>
+            </div>
+
+            <button class="btn btn-primary m-3" (click)="crearEmpleado()">Registrar nuevo empleado</button>
+        </form>
     </div>
     <div class="card-footer text-muted">
-      No compartiremos tus datos con nadie mas
+        No compartiremos tus datos con nadie mas
     </div>
-  </div>
+</div>

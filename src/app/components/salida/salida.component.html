@@ -1,0 +1,31 @@
+<div class="card text-center animated fadeIn">
+    <div class="card-header">
+        Salida de mantenimiento
+    </div>
+    <div class="card-body">
+        <div class="text-left">
+            <a href="" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active"><button type="button" class="btn btn-secondary">
+          <i class ="fa fa-arrow-circle-left"></i>
+        </button>
+      </a>
+        </div>
+        <h5 class="card-title">Escanea el codigo qr del disposito</h5>
+        <input type="text" class="form-control" name="codebar" id="codebar" [(ngModel)]="qrCode" placeholder="Valor del qr">
+
+        <div class="m-2" *ngIf="mensajes.length>0">
+
+            <div class="alert alert-danger" role="alert">
+                <p *ngFor="let mensajes of mensajes">
+                    {{mensajes}}
+                </p>
+            </div>
+
+        </div>
+
+        <button class="btn btn-primary m-2" (click)="getDispositivo()">Registrar salida</button>
+
+    </div>
+    <div class="card-footer text-muted">
+        No compartiremos tus datos con nadie mas
+    </div>
+</div>
