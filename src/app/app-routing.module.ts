@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { AdminusersComponent } from './components/adminusers/adminusers.component';
+import { ConfirmarEntregaComponent } from './components/confirmar-entrega/confirmar-entrega.component';
 import { DiagnosticoServicesComponent } from './components/diagnostico-services/diagnostico-services.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { EntradaComponent } from './components/entrada/entrada.component';
+import { EstadoMantenimientoComponent } from './components/estado-mantenimiento/estado-mantenimiento.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { MenuClientesComponent } from './components/menu-clientes/menu-clientes.component';
@@ -13,8 +15,10 @@ import { NewClienteComponent } from './components/new-cliente/new-cliente.compon
 import { NewDispositivoComponent } from './components/new-dispositivo/new-dispositivo.component';
 import { NewEmpleadoComponent } from './components/new-empleado/new-empleado.component';
 import { NewGerenteComponent } from './components/new-gerente/new-gerente.component';
+import { ProgramarEntregaComponent } from './components/programar-entrega/programar-entrega.component';
 import { QrcodeComponent } from './components/qrcode/qrcode.component';
 import { SalidaComponent } from './components/salida/salida.component';
+import { VentasComponent } from './components/ventas/ventas.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
@@ -33,6 +37,10 @@ const routes: Routes = [
   { path: 'AdminUsuarios',component:AdminusersComponent, canActivate:[AuthGuard]},
   { path: 'EditUsers/:email',component:EditUserComponent, canActivate:[AuthGuard]},
   { path: 'Salida',component:SalidaComponent, canActivate:[AuthGuard]},
+  { path: 'ProgramarEntrega', component:ProgramarEntregaComponent, canActivate:[AuthGuard]},
+  { path: 'ConfirmarEntrega', component:ConfirmarEntregaComponent, canActivate:[AuthGuard]},
+  { path: 'EstadoMantenimiento/:idmantenimiento', component:EstadoMantenimientoComponent},
+  { path: 'Ventas', component:VentasComponent, canActivate:[AuthGuard]},
   { path: '', redirectTo: '/Login', pathMatch: 'full' },
   { path: '**', redirectTo: '/Login', pathMatch: 'full' }
 

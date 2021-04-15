@@ -1,0 +1,84 @@
+<div class="card text-center animated fadeIn">
+    <div class="card-header">
+        Ventas
+    </div>
+    <div class="card-body">
+        <div class="text-left">
+            <a href="" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active"><button type="button" class="btn btn-secondary">
+          <i class ="fa fa-arrow-circle-left"></i>
+        </button>
+      </a>
+        </div>
+        <div class="row">
+
+            <div class="col">
+                <h5 class="card-title">Elegir cliente de venta</h5>
+                <table class="table table-sm table-responsive">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Email Cliente</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Seleccionar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let cliente of clientes">
+                            <td>{{cliente.correo}}</td>
+                            <td>{{cliente.nombre}}</td>
+                            <td>
+                                <button class="btn btn-primary" (click)="saveVenta(cliente.idclie)"><span class="fa fa-plus"></span></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col">
+                <h5>Seleccione el tipo de dispositivo</h5>
+                <select class="form-control" name="selectProduct" [(ngModel)]="productosEnVentas.idtipodis_TiposDispositivos">
+                    <option selected value="0">Seleccione</option>
+                    <option value="{{tipo.idtipodis}}" *ngFor="let tipo of tiposDispositivos">{{tipo.tipodis}}</option>
+                
+                  </select>
+                <p class="mt-2">Precio</p>
+                <input type="text" class="form-control mt-1" name="precio" [(ngModel)]="productosEnVentas.precio" placeholder="precio">
+                <p class="mt-2">Serial del dispositivo</p>
+                <input type="text" class="form-control mt-1" name="serial" [(ngModel)]="productosEnVentas.serial" placeholder="serial">
+
+                <button class="btn btn-primary mt-2" (click)="saveProductosEnVentas()">Guardar producto a esta venta</button>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+        <h5 class="card-title">Productos en esta venta</h5>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Tipo dispositivo</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pev of productosEnLaVenta">
+                    <td>{{pev.idtipodis_TiposDispositivos}}</td>
+                    <td>{{ventaGet.idclie_Clientes}}</td>
+                    <td>{{pev.precio | currency:'COP '}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+    </div>
+    <div class="card-footer text-muted">
+        No compartiremos tus datos con nadie mas
+    </div>
+</div>

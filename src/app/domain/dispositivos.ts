@@ -6,8 +6,9 @@ export class Dispositivos {
         public especificaciones:string,
         public serial:string,
         public idclie_Clientes:number,
-        public idtipodis_TiposDispositivos:number
-
+        public idtipodis_TiposDispositivos:number,
+        //parametros opcionales
+        public emailCliente?:string
     ){}
 
 }

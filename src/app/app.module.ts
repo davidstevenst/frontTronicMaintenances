@@ -27,6 +27,11 @@ import { EditUserComponent } from './components/edit-user/edit-user.component'
 import { environment } from 'src/environments/environment';
 import { NewGerenteComponent } from './components/new-gerente/new-gerente.component';
 import { SalidaComponent } from './components/salida/salida.component';
+import { ProgramarEntregaComponent } from './components/programar-entrega/programar-entrega.component';
+import { ConfirmarEntregaComponent } from './components/confirmar-entrega/confirmar-entrega.component';
+import { EstadoMantenimientoComponent } from './components/estado-mantenimiento/estado-mantenimiento.component';
+import { EstadoMantenimientoPipe } from './pipes/estado-mantenimiento.pipe';
+import { VentasComponent } from './components/ventas/ventas.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,12 @@ import { SalidaComponent } from './components/salida/salida.component';
     AdminusersComponent,
     EditUserComponent,
     NewGerenteComponent,
-    SalidaComponent
+    SalidaComponent,
+    ProgramarEntregaComponent,
+    ConfirmarEntregaComponent,
+    EstadoMantenimientoComponent,
+    EstadoMantenimientoPipe,
+    VentasComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,51 @@
+<div class="card text-center animated fadeIn">
+    <div class="card-header">
+        Programar Entregas
+    </div>
+    <div class="card-body">
+        <div class="text-left">
+            <a href="" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active"><button type="button" class="btn btn-secondary">
+          <i class ="fa fa-arrow-circle-left"></i>
+        </button>
+      </a>
+
+        </div>
+        <form>
+
+            <h5>Gestionar Programados a entrega</h5>
+            <hr>
+
+            <table class="table table-lg table-responsive">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Codigo Dispositivo</th>
+                        <th scope="col">Diagnostico</th>
+                        <th scope="col">Fecha Entrada</th>
+                        <th scope="col">Fecha Diagnostico</th>
+                        <th scope="col">Fecha Terminado</th>
+                        <th scope="col">Programar entrega</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let m of mantenimientos">
+                        <td>{{m.codigo_Dispositivos}}</td>
+                        <td>{{m.diagnostico}}</td>
+                        <td>{{m.fechaEntrada | date:'short'}}</td>
+                        <td>{{m.fechaDiagnostico | date:'short'}}</td>
+                        <td>{{m.fechaTerminado | date:'short'}}</td>
+                        <td>
+                            <button class="btn btn-primary" (click)="update(m)">Programar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+        </form>
+    </div>
+    <div class="card-footer text-muted">
+        No compartiremos tus datos con nadie mas
+    </div>
+</div>
