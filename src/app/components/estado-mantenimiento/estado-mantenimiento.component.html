@@ -15,19 +15,25 @@
         </div>
 
         <hr>
-        <table class="table">
+        <table class="table table-sm table-responsive table-bordered">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Fecha de entrada</th>
+                    <th scope="col">Realizador de entrada</th>
                     <th scope="col">Fecha de diagnostico</th>
+                    <th scope="col">Realizador de diagnostico</th>
                     <th scope="col">Fecha de salida</th>
+                    <th scope="col">Realizador de salida</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>{{mantenimiento?.fechaEntrada | date:'short'}}</td>
+                    <td>{{mantenimiento?.email_Empleadosentrada}}</td>
                     <td>{{mantenimiento?.fechaDiagnostico | date:'short'}}</td>
+                    <td>{{mantenimiento?.email_Empleadosdiagnostico}}</td>
                     <td>{{mantenimiento?.fechaTerminado | date:'short'}}</td>
+                    <td>{{mantenimiento?.email_Empleadosterminado}}</td>
                 </tr>
 
             </tbody>
