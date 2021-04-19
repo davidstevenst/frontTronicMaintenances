@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Dispositivos } from 'src/app/domain/dispositivos';
 import { Mantenimientos } from 'src/app/domain/mantenimientos';
 import { DispositivosService } from 'src/app/services/dispositivos.service';
+import { MailsenderService } from 'src/app/services/mailsender.service';
 import { MantenimientosService } from 'src/app/services/mantenimientos.service';
 import Swal from 'sweetalert2';
 @Component({
@@ -11,8 +13,10 @@ import Swal from 'sweetalert2';
 export class SalidaComponent implements OnInit {
   public qrCode:string="";
   public mensajes:string[]=[];
+  public dispositivo:Dispositivos=null;
   constructor(private dispositivosService:DispositivosService,
-              private mantenimientosService:MantenimientosService) { }
+              private mantenimientosService:MantenimientosService,
+              private mailsender:MailsenderService) { }
 
   ngOnInit(): void {
 
@@ -31,7 +35,7 @@ export class SalidaComponent implements OnInit {
 
     this.dispositivosService.findById(this.qrCode).subscribe(data => {
 
-      
+      this.dispositivo = data;
       this.mantenimientosService.getMantenimientoP(this.qrCode).subscribe(data =>{
 
      
@@ -66,11 +70,18 @@ export class SalidaComponent implements OnInit {
             //aqui se valida que si
             mantenimiento.visita="Y";
             this.updateMantenimiento(mantenimiento)
+            this.mailsender.mailterminadoSend(this.dispositivo.emailCliente,"El mantenimiento de su dispositivo ha terminado","Mantenimiento terminado").subscribe(data => {
+        
+            })
           } else if (result.isDenied) {
             //aqui se valida que no
             mantenimiento.visita="N"
             this.updateMantenimiento(mantenimiento)
+            this.mailsender.mailterminadoSend(this.dispositivo.emailCliente,"El mantenimiento de su dispositivo ha terminado, se le informará cuando se vaya a hacer entrega","Mantenimiento terminado").subscribe(data => {
+        
+            })
           }
+
         })
 
 

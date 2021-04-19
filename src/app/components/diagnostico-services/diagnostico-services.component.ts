@@ -4,6 +4,7 @@ import { Mantenimientos } from 'src/app/domain/mantenimientos';
 import { ServiciosEnMantenimientos } from 'src/app/domain/servicios-en-mantenimientos';
 import { TiposServicios } from 'src/app/domain/tipos-servicios';
 import { DispositivosService } from 'src/app/services/dispositivos.service';
+import { MailsenderService } from 'src/app/services/mailsender.service';
 import { MantenimientosService } from 'src/app/services/mantenimientos.service';
 import { ServiciosenMantenimientosService } from 'src/app/services/serviciosen-mantenimientos.service';
 import { TiposServiciosService } from 'src/app/services/tipos-servicios.service';
@@ -38,7 +39,8 @@ export class DiagnosticoServicesComponent implements OnInit {
   constructor(private mantenimientosService:MantenimientosService,
               private dipositivosService:DispositivosService,
               private tiposServiciosService:TiposServiciosService,
-              private serviciosEnMantenimientosService:ServiciosenMantenimientosService) { }
+              private serviciosEnMantenimientosService:ServiciosenMantenimientosService,
+              private mailsender:MailsenderService) { }
 
   ngOnInit(): void {
 
@@ -99,6 +101,9 @@ export class DiagnosticoServicesComponent implements OnInit {
         'El diagnostico ha sido registrado!',
         'success'
       )
+      this.mailsender.maildiagnosticoSend(this.dispositivo.emailCliente,"El diagnostico de su dispositivo se ha actualizado: "+this.mantenimiento.diagnostico,"Actualizacion de diagnostico").subscribe(data => {
+        
+      })
     }, err =>{
       this.mensajes.push(err.error.error);
     });

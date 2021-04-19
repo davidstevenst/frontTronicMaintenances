@@ -26,7 +26,7 @@
                             <td>{{cliente.correo}}</td>
                             <td>{{cliente.nombre}}</td>
                             <td>
-                                <button class="btn btn-primary" (click)="saveVenta(cliente.idclie)"><span class="fa fa-plus"></span></button>
+                                <button class="btn btn-primary" (click)="saveVenta(cliente)"><span class="fa fa-plus"></span></button>
                             </td>
                         </tr>
                     </tbody>
@@ -41,9 +41,11 @@
                 
                   </select>
                 <p class="mt-2">Precio</p>
-                <input type="text" class="form-control mt-1" name="precio" [(ngModel)]="productosEnVentas.precio" placeholder="precio">
+                <input type="text" class="form-control mt-1" name="precio" [(ngModel)]="productosEnVentas.precio" placeholder="Precio">
                 <p class="mt-2">Serial del dispositivo</p>
-                <input type="text" class="form-control mt-1" name="serial" [(ngModel)]="productosEnVentas.serial" placeholder="serial">
+                <input type="text" class="form-control mt-1" name="serial" [(ngModel)]="productosEnVentas.serial" placeholder="Serial">
+                <p class="mt-2">Cantidad a vender</p>
+                <input type="text" class="form-control mt-1" name="serial" [(ngModel)]="productosEnVentas.cantidad" placeholder="Cantidad">
 
                 <button class="btn btn-primary mt-2" (click)="saveProductosEnVentas()">Guardar producto a esta venta</button>
             </div>
@@ -63,13 +65,19 @@
                     <th scope="col">Tipo dispositivo</th>
                     <th scope="col">Cliente</th>
                     <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Borrar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let pev of productosEnLaVenta">
-                    <td>{{pev.idtipodis_TiposDispositivos}}</td>
-                    <td>{{ventaGet.idclie_Clientes}}</td>
+                    <td>{{pev.tipodis}}</td>
+                    <td>{{clienteSelect.nombre}}</td>
                     <td>{{pev.precio | currency:'COP '}}</td>
+                    <td>{{pev.cantidad}}</td>
+                    <td>{{pev.cantidad * pev.precio | currency:'COP ' }}</td>
+                    <td><button class="btn btn-danger" (click)="deleteProduct(pev)"><span class="fa fa-trash"></span></button></td>
                 </tr>
             </tbody>
         </table>

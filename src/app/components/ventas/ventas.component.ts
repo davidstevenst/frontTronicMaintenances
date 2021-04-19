@@ -14,11 +14,12 @@ import Swal from 'sweetalert2';
 })
 export class VentasComponent implements OnInit {
   idcliente:number=0;
+  clienteSelect:Clientes=null;
   public ventas:Ventas = new Ventas("Y",new Date(), 0, 0);
   public tiposDispositivos:TiposDispositivos[] = []
   public clientes:Clientes[] = []
   public ventaGet:Ventas = new Ventas("Y",new Date(), 0, 0);
-  public productosEnVentas = new ProductosEnVentas(0,0,"",0,0);
+  public productosEnVentas = new ProductosEnVentas(0,0,"",0,0,0);
   public productosEnLaVenta:ProductosEnVentas[] =[];
 
   constructor(private clientesService:ClientesService,
@@ -49,11 +50,13 @@ export class VentasComponent implements OnInit {
 
  
 
-  saveVenta(idcliente:number){
- 
-    this.ventas.idclie_Clientes=idcliente
+  saveVenta(cliente:Clientes){
+
+    this.ventas.idclie_Clientes=cliente.idclie;
+    this.clienteSelect=cliente;
+   
     this.ventasService.save(this.ventas).subscribe(data => {
-  
+      
  
       Swal.fire(
         'Good job!',
@@ -61,7 +64,7 @@ export class VentasComponent implements OnInit {
         'success'
       )
 
-      this.ventasService.findByCliente(idcliente).subscribe(data =>{
+      this.ventasService.findByCliente(cliente.idclie).subscribe(data =>{
         this.ventaGet = data;
         this.productosEnVentas.idventa_Ventas = this.ventaGet.idventa;
         this.ventasService.getProductosEnVentas(this.ventaGet.idventa).subscribe(data =>{
@@ -77,7 +80,7 @@ export class VentasComponent implements OnInit {
  
       
       //this.getVenta(idcliente)
-      this.ventasService.findByCliente(idcliente).subscribe(data =>{
+      this.ventasService.findByCliente(cliente.idclie).subscribe(data =>{
       
         this.ventaGet = data;
         this.productosEnVentas.idventa_Ventas = this.ventaGet.idventa;
@@ -147,6 +150,12 @@ export class VentasComponent implements OnInit {
     })
   }
 
+
+  deleteProduct(pev:ProductosEnVentas){
+    this.ventasService.deleteProductosEnVentas(pev.idproven).subscribe(data =>{
+      this.getProductosEnVentas(pev.idventa_Ventas);
+    })
+  }
 
 
 }
