@@ -72,5 +72,33 @@ export class MantenimientosService {
     
   }
 
+  getReporteEnMantenimiento():Observable<any>{
+
+    let headers=this.createTokenHeader();
+    return this.httpClient.get(this.url+"/getReporteEnMantenimiento",{headers:headers});
+    
+  }
+
+  getReporteCompletados():Observable<any>{
+
+    let headers=this.createTokenHeader();
+    return this.httpClient.get(this.url+"/getReporteCompletados",{headers:headers});
+    
+  }
+
+  getTerminadosEnFechas(fechaini:Date,fechafin:Date):Observable<any>{
+
+    let headers=this.createTokenHeader();
+    return this.httpClient.get(this.url+"/getTerminadosEnFechas/"+fechaini+"/"+fechafin,{headers:headers});
+    
+  }
+
+  getHistProcesosFechas(fechaini:Date,fechafin:Date):Observable<any>{
+
+    let headers=this.createTokenHeader();
+    return this.httpClient.get(this.url+"/getHistProcesosFechas/"+fechaini+"/"+fechafin,{headers:headers});
+    
+  }
+
 
 }

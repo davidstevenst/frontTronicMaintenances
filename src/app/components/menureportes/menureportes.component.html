@@ -1,0 +1,30 @@
+<div class="row justify-content-center animated fadeIn fast ">
+    <div class="card text-center" style="width: 18rem;">
+        <div class="card-header">
+
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-2">
+                    <a href="" [routerLink]="['/MainMenu']" routerLinkActive="router-link-active">
+                        <button type="button" class="btn btn-secondary">
+                            <i class ="fa fa-arrow-circle-left"></i>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="col-10">
+                    <h5 class="card-title">Menú de Reportes</h5>
+                </div>
+            </div>
+            <hr>
+            <div class="mt-1">
+                <a (click)="reporteEnMantenimiento()" class="btn btn-primary mb-1">Dispositivos en Mantenimiento</a>
+                <a href="" [routerLink]="['/Completados']" routerLinkActive="router-link-active" class="btn btn-primary mb-1">Mantenimientos Completados</a>
+                <a href="" [routerLink]="['/TerminadosFechas']" routerLinkActive="router-link-active" class="btn btn-primary mb-1">Terminados en Fechas</a>
+                <a href="" [routerLink]="['/VentasFechas']" routerLinkActive="router-link-active" class="btn btn-primary mb-1">Ventas en Fechas</a>
+                <a href="" [routerLink]="['/HistProcesosFechas']" routerLinkActive="router-link-active" class="btn btn-primary mb-1">Hist Procesos en Fechas</a>
+            </div>
+        </div>
+    </div>
+</div>

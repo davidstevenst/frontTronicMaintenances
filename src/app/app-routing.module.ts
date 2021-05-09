@@ -11,12 +11,18 @@ import { LoginComponent } from './components/login/login.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { MenuClientesComponent } from './components/menu-clientes/menu-clientes.component';
 import { MenuUsuariosComponent } from './components/menu-usuarios/menu-usuarios.component';
+import { MenureportesComponent } from './components/menureportes/menureportes.component';
 import { NewClienteComponent } from './components/new-cliente/new-cliente.component';
 import { NewDispositivoComponent } from './components/new-dispositivo/new-dispositivo.component';
 import { NewEmpleadoComponent } from './components/new-empleado/new-empleado.component';
 import { NewGerenteComponent } from './components/new-gerente/new-gerente.component';
 import { ProgramarEntregaComponent } from './components/programar-entrega/programar-entrega.component';
 import { QrcodeComponent } from './components/qrcode/qrcode.component';
+import { CompletadosComponent } from './components/reportes/completados/completados.component';
+import { EnmantenimientoComponent } from './components/reportes/enmantenimiento/enmantenimiento.component';
+import { HistProcesosFechasComponent } from './components/reportes/hist-procesos-fechas/hist-procesos-fechas.component';
+import { TerminadosFechasComponent } from './components/reportes/terminados-fechas/terminados-fechas.component';
+import { VentasFechasComponent } from './components/reportes/ventas-fechas/ventas-fechas.component';
 import { SalidaComponent } from './components/salida/salida.component';
 import { VentasComponent } from './components/ventas/ventas.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -38,6 +44,12 @@ const routes: Routes = [
   { path: 'EditUsers/:email',component:EditUserComponent, canActivate:[AuthGuard]},
   { path: 'Salida',component:SalidaComponent, canActivate:[AuthGuard]},
   { path: 'ProgramarEntrega', component:ProgramarEntregaComponent, canActivate:[AuthGuard]},
+  { path: 'MenuReportes', component:MenureportesComponent, canActivate:[AuthGuard]},
+  { path: 'EnMantenimiento', component:EnmantenimientoComponent, canActivate:[AuthGuard]},
+  { path: 'Completados', component:CompletadosComponent, canActivate:[AuthGuard]},
+  { path: 'HistProcesosFechas', component:HistProcesosFechasComponent, canActivate:[AuthGuard]},
+  { path: 'TerminadosFechas', component:TerminadosFechasComponent, canActivate:[AuthGuard]},
+  { path: 'VentasFechas', component:VentasFechasComponent, canActivate:[AuthGuard]},
   { path: 'ConfirmarEntrega', component:ConfirmarEntregaComponent, canActivate:[AuthGuard]},
   { path: 'EstadoMantenimiento/:idmantenimiento', component:EstadoMantenimientoComponent},
   { path: 'Ventas', component:VentasComponent, canActivate:[AuthGuard]},

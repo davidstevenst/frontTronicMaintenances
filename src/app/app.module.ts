@@ -32,7 +32,16 @@ import { ConfirmarEntregaComponent } from './components/confirmar-entrega/confir
 import { EstadoMantenimientoComponent } from './components/estado-mantenimiento/estado-mantenimiento.component';
 import { EstadoMantenimientoPipe } from './pipes/estado-mantenimiento.pipe';
 import { VentasComponent } from './components/ventas/ventas.component';
-
+import { PdfMakeWrapper } from 'pdfmake-wrapper';
+import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+import { MenureportesComponent } from './components/menureportes/menureportes.component';
+import { EnmantenimientoComponent } from './components/reportes/enmantenimiento/enmantenimiento.component';
+import { CompletadosComponent } from './components/reportes/completados/completados.component';
+import { TerminadosFechasComponent } from './components/reportes/terminados-fechas/terminados-fechas.component';
+import { VentasFechasComponent } from './components/reportes/ventas-fechas/ventas-fechas.component';
+import { HistProcesosFechasComponent } from './components/reportes/hist-procesos-fechas/hist-procesos-fechas.component';
+// Set the fonts to use
+PdfMakeWrapper.setFonts(pdfFonts);
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +67,13 @@ import { VentasComponent } from './components/ventas/ventas.component';
     ConfirmarEntregaComponent,
     EstadoMantenimientoComponent,
     EstadoMantenimientoPipe,
-    VentasComponent
+    VentasComponent,
+    MenureportesComponent,
+    EnmantenimientoComponent,
+    CompletadosComponent,
+    TerminadosFechasComponent,
+    VentasFechasComponent,
+    HistProcesosFechasComponent
   ],
   imports: [
     BrowserModule,

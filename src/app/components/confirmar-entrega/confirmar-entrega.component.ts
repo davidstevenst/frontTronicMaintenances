@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Dispositivos } from 'src/app/domain/dispositivos';
 import { Mantenimientos } from 'src/app/domain/mantenimientos';
+import { DispositivosService } from 'src/app/services/dispositivos.service';
+import { MailsenderService } from 'src/app/services/mailsender.service';
 import { MantenimientosService } from 'src/app/services/mantenimientos.service';
 import Swal from 'sweetalert2';
 @Component({
@@ -10,8 +13,10 @@ import Swal from 'sweetalert2';
 export class ConfirmarEntregaComponent implements OnInit {
 
   public mantenimientos:Mantenimientos[] =[];
-
-  constructor(private mantenimientosService:MantenimientosService) { }
+  public dispositivo:Dispositivos=null;
+  constructor(private mantenimientosService:MantenimientosService,
+    private dispositivosService:DispositivosService,
+    private mailService:MailsenderService) { }
 
   ngOnInit(): void {
     this.getProgramados();
@@ -27,6 +32,14 @@ export class ConfirmarEntregaComponent implements OnInit {
         'Programado a entregar!',
         'success'
       )
+
+      this.dispositivosService.findById(mantenimiento.codigo_Dispositivos).subscribe(data =>{
+        this.dispositivo = data;
+        console.log(this.dispositivo)
+        this.mailService.mailprogramadoSend(this.dispositivo.emailCliente,'El dispositivo ha sido entregado','Proceso de mantenimiento: Entregado').subscribe(data =>{
+
+        })
+      })
      this.getProgramados();
 
     }, err =>{
