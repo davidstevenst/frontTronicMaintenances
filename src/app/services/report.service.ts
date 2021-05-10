@@ -29,4 +29,34 @@ export class ReportService {
           );
 
   }
+
+  completados():Observable<any>{
+    let headers=this.createTokenHeader();
+    return this.httpClient.get(this.url+"/reportCompletados",
+          {headers:headers,
+          responseType:'blob'
+          }
+          );
+
+  }
+
+  terminadosFechas(fechaini:Date, fechafin:Date):Observable<any>{
+    let headers=this.createTokenHeader();
+    return this.httpClient.get(this.url+"/reportTerminadosFechas/"+fechaini+"/"+fechafin,
+          {headers:headers,
+          responseType:'blob'
+          }
+          );
+
+  }
+
+  ventasFechas(fechaini:Date, fechafin:Date):Observable<any>{
+    let headers=this.createTokenHeader();
+    return this.httpClient.get(this.url+"/reportVentas/"+fechaini+"/"+fechafin,
+          {headers:headers,
+          responseType:'blob'
+          }
+          );
+
+  }
 }

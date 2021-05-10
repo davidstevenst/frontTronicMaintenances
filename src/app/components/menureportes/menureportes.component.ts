@@ -45,4 +45,30 @@ export class MenureportesComponent implements OnInit {
     })
   }
 
+  reporteCompletados(){
+    this.reportsService.completados().subscribe(data =>{
+      const blob = new Blob([data], {type: 'aplication/pdf'});
+
+      if(window.navigator && window.navigator.msSaveOrOpenBlob){
+        window.navigator.msSaveOrOpenBlob(blob);
+        return;
+      }
+
+      const dat = window.URL.createObjectURL(blob);
+      const link =document.createElement("a");
+      link.href = dat;
+      link.download = 'completados.pdf';
+      link.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}))
+      
+      setTimeout(function()  {
+        window.URL.revokeObjectURL(dat);
+        link.remove();
+      }, 1000);
+      
+    
+    },err =>{
+      console.log(err.error.error)
+    })
+  }
+
 }
