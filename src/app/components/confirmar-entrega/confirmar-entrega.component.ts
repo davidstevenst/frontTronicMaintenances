@@ -4,6 +4,7 @@ import { Mantenimientos } from 'src/app/domain/mantenimientos';
 import { DispositivosService } from 'src/app/services/dispositivos.service';
 import { MailsenderService } from 'src/app/services/mailsender.service';
 import { MantenimientosService } from 'src/app/services/mantenimientos.service';
+import { ReportService } from 'src/app/services/report.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-confirmar-entrega',
@@ -16,7 +17,8 @@ export class ConfirmarEntregaComponent implements OnInit {
   public dispositivo:Dispositivos=null;
   constructor(private mantenimientosService:MantenimientosService,
     private dispositivosService:DispositivosService,
-    private mailService:MailsenderService) { }
+    private mailService:MailsenderService,
+    private reportService:ReportService) { }
 
   ngOnInit(): void {
     this.getProgramados();
@@ -53,5 +55,34 @@ export class ConfirmarEntregaComponent implements OnInit {
     })
   }
 
+
+  public generarReporte(){
+    this.reportService.reportPurchaseOrder().subscribe(data =>{
+
+      const blob = new Blob([data], {type: 'aplication/pdf'});
+
+      if(window.navigator && window.navigator.msSaveOrOpenBlob){
+        window.navigator.msSaveOrOpenBlob(blob);
+        return;
+      }
+
+      const dat = window.URL.createObjectURL(blob);
+      const link =document.createElement("a");
+      link.href = dat;
+      link.download = 'Comprobante.pdf';
+      link.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true,view:window}))
+      
+      setTimeout(function()  {
+        window.URL.revokeObjectURL(dat);
+        link.remove();
+      }, 1000);
+      
+    
+    },err =>{
+      console.log(err.error.error)
+    })
+
+
+  }
 
 }

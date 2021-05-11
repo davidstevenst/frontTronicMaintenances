@@ -114,7 +114,6 @@ export class VentasComponent implements OnInit {
 
   }
 
-
   saveProductosEnVentas(){
 
     if (this.productosEnVentas.idtipodis_TiposDispositivos == 0) {
@@ -157,5 +156,18 @@ export class VentasComponent implements OnInit {
     })
   }
 
+  update(){
+    this.ventaGet.estado="T";
+    this.ventasService.update(this.ventaGet).subscribe(data =>{
+      this.getClientes();
+      this.getTiposDispositivos();
+      Swal.fire(
+        'Good job!',
+        'Venta Terminada!',
+        'success'
+      )
+    })
+
+  }
 
 }

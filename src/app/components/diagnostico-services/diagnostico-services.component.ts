@@ -110,6 +110,11 @@ export class DiagnosticoServicesComponent implements OnInit {
 
   }
 
+  deleteService(idservice:number){
+    this.serviciosEnMantenimientosService.deleteServicioFromMantenimiento(idservice).subscribe(data =>{
+      this.findServicios();
+    })
+  }
 
   findAllTiposServicios(){
 
@@ -153,7 +158,6 @@ export class DiagnosticoServicesComponent implements OnInit {
   findServicios(){
      this.serviciosEnMantenimientosService.findServiciosByMantenimientos(this.mantenimiento.idmantenimiento).subscribe(data =>{
       this.serviciosEnMantenimientos=data;
-      
      
       console.log(data)
 

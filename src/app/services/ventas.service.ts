@@ -86,4 +86,9 @@ export class VentasService {
     return this.httpClient.delete(this.urlpev+"/"+idproenventa, {headers:headers});
   }
 
+  update(ventas:Ventas):Observable<any>{
+    let headers=this.createTokenHeader();
+
+    return this.httpClient.put(this.url,ventas, {headers:headers});
+  }
 }

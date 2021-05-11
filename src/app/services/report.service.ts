@@ -59,4 +59,23 @@ export class ReportService {
           );
 
   }
+
+
+  reportHistProcesos(fechaini:Date, fechafin:Date):Observable<any>{
+    let headers=this.createTokenHeader();
+    return this.httpClient.get(this.url+"/reportHistProcesos/"+fechaini+"/"+fechafin,
+          {headers:headers,
+          responseType:'blob'
+          }
+          );
+  }
+
+  reportPurchaseOrder():Observable<any>{
+    let headers=this.createTokenHeader();
+    return this.httpClient.get(this.url+"/reportPurchaseOrder/",
+          {headers:headers,
+          responseType:'blob'
+          }
+          );
+  }
 }

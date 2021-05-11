@@ -34,6 +34,13 @@ export class ServiciosenMantenimientosService {
 
   }
 
+  deleteServicioFromMantenimiento(idServicio:number):Observable<any>{
+    let headers= this.createTokenHeader();
+
+    return this.httpClient.delete(this.url+"/"+idServicio,{headers:headers})
+
+  }
+
 
   
 
